@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Отделы{% endblock %}
+
+{% block content %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="page-header">
+                <h1>Отделы</h1>
+            </div>
+            <ul class="list-group">
+                {% for department in departments_list%}
+                    <li>
+                        <div class="main_block_elem">
+                            <h4>{{ department.name }}</h4>
+                            Описание: {{ department.description }}<br>
+                    </div>
+                    </li>
+                {% empty %}
+                    <li>пустой список</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
